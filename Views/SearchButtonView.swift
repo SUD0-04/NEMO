@@ -5,6 +5,9 @@
 //  Created by SUDØ on 1/12/26.
 //
 
+// 검색 버튼만을 위한 별도의 View
+// 추후 iOS26 이후에서 작동 가능하며, Liquid Glass 디자인을 최대한 적용한 코드로 변경 예정
+
 import SwiftUI
 
 struct SearchButtonView: View {

@@ -5,6 +5,9 @@
 //  Created by SUDØ on 1/12/26.
 //
 
+// 하단 TabBar구성을 위한 View
+// 예시로 촬영 버튼만 구현
+
 import SwiftUI
 
 struct GroupedTabItemView: View {

@@ -5,6 +5,9 @@
 //  Created by SUDØ on 1/12/26.
 //
 
+// 하단 기능 bar구성을 위한 view
+// 현재 Liquid Glass 디자인 적용을 위한 구상 중
+
 import SwiftUI
 
 struct BottomBar: View {
