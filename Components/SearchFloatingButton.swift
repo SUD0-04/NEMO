@@ -13,11 +13,12 @@ struct SearchFloatingButton: View {
     var body: some View {
         Button(action: action) {
             Image(systemName: "magnifyingglass")
-                .font(.system(size: 18, weight: .semibold))
+                .font(.system(size: 20, weight: .semibold))
                 .foregroundStyle(.primary)
-                .frame(width: 44, height: 44)
+                .frame(width: 55, height: 55)
                 .background(.regularMaterial)
                 .clipShape(Circle())
+                .glassEffect(.regular.interactive())
         }
     }
 }

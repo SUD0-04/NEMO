@@ -11,7 +11,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var selectedTab: MainTab = .camera
+    @State private var selectedTab: MainTab = .shot
     @State private var showSearch = false
 
     var body: some View {
@@ -19,9 +19,9 @@ struct MainView: View {
             // 메인 콘텐츠
             Group {
                 switch selectedTab {
-                case .camera:
+                case .shot:
                     CameraView()
-                case .gallery:
+                case .films:
                     GalleryView()
                 }
             }
@@ -37,7 +37,7 @@ struct MainView: View {
                             selectedTab: $selectedTab
                         )
                     }
-                    .frame(height: 44)
+                    .frame(height: 55)
                     .glassEffect(.regular.interactive(), in: .capsule)
 
                     SearchFloatingButton {
@@ -45,8 +45,8 @@ struct MainView: View {
                     }
                 }
                 .frame(height: 44) // 🔥 시각적 무게 통일의 핵심
-                .padding(.horizontal, 20)
-                .padding(.bottom, 10)
+                .padding(.horizontal, 30)
+                .padding(.bottom, 30)
             }
         }
         .sheet(isPresented: $showSearch) {

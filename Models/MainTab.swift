@@ -10,8 +10,8 @@
 import Foundation
 
 enum MainTab: String, CaseIterable {
-    case camera = "Camera"
-    case gallery = "Gallery"
+    case shot = "Shot"
+    case films = "Films"
 
     var index: Int {
         Self.allCases.firstIndex(of: self) ?? 0

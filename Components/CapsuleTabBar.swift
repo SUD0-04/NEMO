@@ -56,7 +56,7 @@ struct CapsuleTabBar: UIViewRepresentable {
 }
 
 private struct CapsuleTabBarPreview: View {
-    @State private var tab: MainTab = .camera
+    @State private var tab: MainTab = .shot
 
     var body: some View {
         GeometryReader { proxy in
@@ -65,7 +65,7 @@ private struct CapsuleTabBarPreview: View {
                 selectedTab: $tab
             )
         }
-        .frame(height: 44)
+        .frame(height: 55)
         .glassEffect(.regular.interactive(), in: .capsule)
         .padding()
     }

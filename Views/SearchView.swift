@@ -10,8 +10,8 @@ import SwiftUI
 struct SearchView: View {
     var body: some View {
         NavigationStack {
-            Text("검색 화면")
-                .navigationTitle("검색")
+            Text("사진검색")
+                .navigationTitle("🔍 Search")
         }
     }
 }
