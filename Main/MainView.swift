@@ -44,7 +44,7 @@ struct MainView: View {
                         showSearch = true
                     }
                 }
-                .frame(height: 44) // 🔥 시각적 무게 통일의 핵심
+                .frame(height: 44)
                 .padding(.horizontal, 30)
                 .padding(.bottom, 30)
             }

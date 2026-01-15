@@ -21,9 +21,22 @@
 		5228E5DC2F18D4CC001A71C3 /* SearchFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFloatingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5228E5E32F19109E001A71C3 /* Exceptions for "NEMO" folder in "NEMO" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5228E4F02F151E0D001A71C3 /* NEMO */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5228E4F32F151E0D001A71C3 /* NEMO */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5228E5E32F19109E001A71C3 /* Exceptions for "NEMO" folder in "NEMO" target */,
+			);
 			path = NEMO;
 			sourceTree = "<group>";
 		};
@@ -306,6 +319,7 @@
 				DEVELOPMENT_TEAM = 52NJ98457L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NEMO/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n카메라 사용을 위해서 권한 허용이 필요합니다. ";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "촬영한 사진을 저장하기 위한 라이브러리 접근이 필요합니다. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -340,6 +354,7 @@
 				DEVELOPMENT_TEAM = 52NJ98457L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NEMO/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n카메라 사용을 위해서 권한 허용이 필요합니다. ";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "촬영한 사진을 저장하기 위한 라이브러리 접근이 필요합니다. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
