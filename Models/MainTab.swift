@@ -7,14 +7,13 @@
 
 // 작동을 위한 구상 모델
 
-import SwiftUI
+import Foundation
 
-enum MainTab: Hashable {
-    case camera
-    case gallery
-    case search
+enum MainTab: String, CaseIterable {
+    case camera = "Camera"
+    case gallery = "Gallery"
+
+    var index: Int {
+        Self.allCases.firstIndex(of: self) ?? 0
+    }
 }
-
-//#Preview {
-//    MainTab()
-//}

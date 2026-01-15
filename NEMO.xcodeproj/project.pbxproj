@@ -6,19 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5228E5362F15FBD7001A71C3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228E52E2F15FBD7001A71C3 /* MainView.swift */; };
+		5228E5572F166E8B001A71C3 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228E5562F166E8B001A71C3 /* MainTab.swift */; };
+		5228E5DB2F18D4BC001A71C3 /* CapsuleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228E5DA2F18D4BC001A71C3 /* CapsuleTabBar.swift */; };
+		5228E5DD2F18D4CC001A71C3 /* SearchFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228E5DC2F18D4CC001A71C3 /* SearchFloatingButton.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		5228E4F12F151E0D001A71C3 /* NEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5228E52E2F15FBD7001A71C3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		5228E5562F166E8B001A71C3 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		5228E5DA2F18D4BC001A71C3 /* CapsuleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTabBar.swift; sourceTree = "<group>"; };
+		5228E5DC2F18D4CC001A71C3 /* SearchFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFloatingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5228E4F32F151E0D001A71C3 /* NEMO */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NEMO;
-			sourceTree = "<group>";
-		};
-		5228E4FF2F151E43001A71C3 /* Models */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Models;
 			sourceTree = "<group>";
 		};
 		5228E50C2F151F71001A71C3 /* Views */ = {
@@ -44,8 +50,10 @@
 			children = (
 				5228E4F32F151E0D001A71C3 /* NEMO */,
 				5228E4F22F151E0D001A71C3 /* Products */,
-				5228E4FF2F151E43001A71C3 /* Models */,
+				5228E57F2F17C4E8001A71C3 /* Main */,
+				5228E5812F17C507001A71C3 /* Models */,
 				5228E50C2F151F71001A71C3 /* Views */,
+				5228E5702F1671CC001A71C3 /* Components */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +63,31 @@
 				5228E4F12F151E0D001A71C3 /* NEMO.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5228E5702F1671CC001A71C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5228E5DA2F18D4BC001A71C3 /* CapsuleTabBar.swift */,
+				5228E5DC2F18D4CC001A71C3 /* SearchFloatingButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5228E57F2F17C4E8001A71C3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5228E52E2F15FBD7001A71C3 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5228E5812F17C507001A71C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5228E5562F166E8B001A71C3 /* MainTab.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,7 +107,6 @@
 			);
 			fileSystemSynchronizedGroups = (
 				5228E4F32F151E0D001A71C3 /* NEMO */,
-				5228E4FF2F151E43001A71C3 /* Models */,
 				5228E50C2F151F71001A71C3 /* Views */,
 			);
 			name = NEMO;
@@ -133,6 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5228E5DD2F18D4CC001A71C3 /* SearchFloatingButton.swift in Sources */,
+				5228E5362F15FBD7001A71C3 /* MainView.swift in Sources */,
+				5228E5572F166E8B001A71C3 /* MainTab.swift in Sources */,
+				5228E5DB2F18D4BC001A71C3 /* CapsuleTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

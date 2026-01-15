@@ -14,8 +14,9 @@ struct CameraView: View {
     var body: some View {
         Color.black
             .overlay(
-                Text("카메라")
+                Text("📸")
                     .foregroundStyle(.white)
+                    .font(.largeTitle)
                 // 빈티지 카메라 이미지를 사용할 예정
             )
     }
