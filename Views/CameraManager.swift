@@ -13,8 +13,11 @@ import Combine // @Published를 위해 필수
 class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     @Published var session = AVCaptureSession()
     private let output = AVCapturePhotoOutput()
+    private var isPermissionRequested = false
     
     func setup() {
+        guard !isPermissionRequested else { return }
+        isPermissionRequested = true
         checkPermissions()
     }
     
@@ -92,7 +95,7 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
             return image
         }
         
-        // 크롭된 결과물을 UIImage로 반환 (이후 코드가 없어야 함)
         return UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
     }
 }
+

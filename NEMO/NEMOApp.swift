@@ -1,17 +1,22 @@
-//
-//  NEMOApp.swift
-//  NEMO
-//
-//  Created by SUDØ on 1/12/26.
-//
-
 import SwiftUI
+import Combine
 
 @main
 struct NEMOApp: App {
+    @StateObject private var launchState = LaunchState()
     var body: some Scene {
         WindowGroup {
-            MainView()
+            if launchState.isActive {
+                LaunchView(isActive: $launchState.isActive)
+            } else {
+                MainView()
+            }
         }
     }
 }
+
+@MainActor
+class LaunchState: ObservableObject {
+    @Published var isActive = true
+}
+
