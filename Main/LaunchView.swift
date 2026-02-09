@@ -1,5 +1,7 @@
 import SwiftUI
 
+/// The initial launch screen shown when the app starts.
+/// Controls the transition to `PreView` by updating the `isActive` binding.
 struct LaunchView: View {
     @Binding var isActive: Bool
     @State private var opacity: Double = 1.0

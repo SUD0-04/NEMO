@@ -12,6 +12,7 @@
 		5228E5DB2F18D4BC001A71C3 /* CapsuleTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228E5DA2F18D4BC001A71C3 /* CapsuleTabBar.swift */; };
 		5228E5DD2F18D4CC001A71C3 /* SearchFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5228E5DC2F18D4CC001A71C3 /* SearchFloatingButton.swift */; };
 		52D929022F264181002F2526 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D929012F264180002F2526 /* LaunchView.swift */; };
+		52F7D8B32F39FE74003A0BFB /* PreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F7D8B22F39FE74003A0BFB /* PreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		5228E5DA2F18D4BC001A71C3 /* CapsuleTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTabBar.swift; sourceTree = "<group>"; };
 		5228E5DC2F18D4CC001A71C3 /* SearchFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFloatingButton.swift; sourceTree = "<group>"; };
 		52D929012F264180002F2526 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		52F7D8B22F39FE74003A0BFB /* PreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -94,6 +96,7 @@
 			children = (
 				5228E52E2F15FBD7001A71C3 /* MainView.swift */,
 				52D929012F264180002F2526 /* LaunchView.swift */,
+				52F7D8B22F39FE74003A0BFB /* PreView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				52D929022F264181002F2526 /* LaunchView.swift in Sources */,
 				5228E5362F15FBD7001A71C3 /* MainView.swift in Sources */,
 				5228E5572F166E8B001A71C3 /* MainTab.swift in Sources */,
+				52F7D8B32F39FE74003A0BFB /* PreView.swift in Sources */,
 				5228E5DB2F18D4BC001A71C3 /* CapsuleTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +329,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NEMO/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = kaan;
-				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n카메라 사용을 위해서 권한 허용이 필요합니다. ";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라 접근이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "촬영한 사진을 저장하기 위한 라이브러리 접근이 필요합니다. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -365,7 +369,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NEMO/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = kaan;
-				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n사진 촬영을 위해 카메라 접근이 필요합니다.\n카메라 사용을 위해서 권한 허용이 필요합니다. ";
+				INFOPLIST_KEY_NSCameraUsageDescription = "사진 촬영을 위해 카메라 접근이 필요합니다.";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "촬영한 사진을 저장하기 위한 라이브러리 접근이 필요합니다. ";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
