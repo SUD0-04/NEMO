@@ -78,7 +78,7 @@ struct PreView: View {
                         isActive = false
                     }
                 }) {
-                    Text(page == totalPages - 1 ? "시작하기" : (page == 0 ? "촬영하기" : "다음"))
+                    Text(page == totalPages - 1 ? "촬영하기" : (page == 0 ? "시작하기" : "다음"))
                         .font(.headline)
                         .foregroundStyle(.white)
                         .padding(.horizontal, 40)
@@ -97,18 +97,18 @@ struct PreView: View {
     // 각 페이지별 타이틀/설명 예시 (적절히 수정 가능)
     func previewTitle(for index: Int) -> String {
         switch index {
-        case 1: return "필름처럼 저장"
-        case 2: return "갤러리로 관리"
-        case 3: return "감성 필터 지원"
+        case 1: return "정방형의 매력"
+        case 2: return "순간을 기억하는 필름"
+        case 3: return "AMUSEI (Beta)"
         default: return ""
         }
     }
 
     func previewDescription(for index: Int) -> String {
         switch index {
-        case 1: return "촬영한 사진을 필름처럼 한눈에 저장하고 관리할 수 있습니다."
-        case 2: return "나만의 갤러리에서 추억을 관리하세요."
-        case 3: return "다양한 감성 필터로 색다른 느낌을 더해보세요."
+        case 1: return "예술은 제약에서 살고, 자유에서 죽는다.\n - 레오나르도 다빈치 - "
+        case 2: return "사진은 찍는 순간 완성되는 것이 아니라,\n현상되는 순간 다시 태어난다.\n - 인셀 아담스 - "
+        case 3: return "텅 빈 여백을 채워주는 손안의 작명가\n(Apple Intelligence를 통해 구현될 예정)"
         default: return ""
         }
     }
