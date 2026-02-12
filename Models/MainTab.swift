@@ -16,4 +16,22 @@ enum MainTab: String, CaseIterable {
     var index: Int {
         Self.allCases.firstIndex(of: self) ?? 0
     }
+
+    var symbolName: String {
+        switch self {
+        case .shot:
+            return "camera.fill"
+        case .films:
+            return "photo.on.rectangle.angled"
+        }
+    }
+
+    var displayTitle: String {
+        switch self {
+        case .shot:
+            return "Shots"
+        case .films:
+            return "Films"
+        }
+    }
 }

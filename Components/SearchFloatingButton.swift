@@ -14,11 +14,9 @@ struct SearchFloatingButton: View {
         Button(action: action) {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 20, weight: .semibold))
-                .foregroundStyle(.primary)
+                .foregroundStyle(.white)
                 .frame(width: 55, height: 55)
-                .background(.regularMaterial)
-                .clipShape(Circle())
-                .glassEffect(.regular.interactive())
+                .glassEffect(.regular.interactive(), in: .circle)
         }
     }
 }

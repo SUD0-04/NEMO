@@ -17,14 +17,13 @@ struct MainView: View {
     var body: some View {
         ZStack {
             // 메인 콘텐츠
-            Group {
-                switch selectedTab {
-                case .shot:
-                    CameraView()
-                case .films:
-                    GalleryView()
-                }
-            }
+            CameraView()
+                .opacity(selectedTab == .shot ? 1 : 0)
+                .allowsHitTesting(selectedTab == .shot)
+
+            GalleryView()
+                .opacity(selectedTab == .films ? 1 : 0)
+                .allowsHitTesting(selectedTab == .films)
 
             // 하단 UI
             VStack {
@@ -38,17 +37,17 @@ struct MainView: View {
                         )
                     }
                     .frame(height: 55)
-                    .glassEffect(.regular.interactive(), in: .capsule)
 
                     SearchFloatingButton {
                         showSearch = true
                     }
                 }
-                .frame(height: 44)
+                .frame(height: 55)
                 .padding(.horizontal, 30)
                 .padding(.bottom, 30)
             }
         }
+        .animation(.easeInOut(duration: 0.2), value: selectedTab)
         .sheet(isPresented: $showSearch) {
             SearchView()
         }
