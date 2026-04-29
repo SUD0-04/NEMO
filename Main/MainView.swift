@@ -16,6 +16,8 @@ struct MainView: View {
 
     var body: some View {
         ZStack {
+            Color.black.ignoresSafeArea()
+
             // 메인 콘텐츠
             CameraView()
                 .opacity(selectedTab == .shot ? 1 : 0)

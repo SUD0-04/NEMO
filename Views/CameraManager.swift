@@ -57,11 +57,10 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
     func capture() {
         #if targetEnvironment(simulator)
         print("시뮬레이터에서는 카메라가 작동하지 않습니다.")
-        return
-        #endif
-        
+        #else
         let settings = AVCapturePhotoSettings()
         output.capturePhoto(with: settings, delegate: self)
+        #endif
     }
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
@@ -98,4 +97,3 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
         return UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
     }
 }
-

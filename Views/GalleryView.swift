@@ -13,6 +13,7 @@ import SwiftUI
 struct GalleryView: View {
     var body: some View {
         Color.black
+            .ignoresSafeArea()
             .overlay(
                 Text("갤러리")
                     .foregroundStyle(.white)
