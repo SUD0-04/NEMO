@@ -11,6 +11,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.scenePhase) private var scenePhase
+    @StateObject private var camera = CameraManager()
     @State private var selectedTab: MainTab = .shot
     @State private var showSearch = false
 
@@ -19,7 +21,7 @@ struct MainView: View {
             Color.black.ignoresSafeArea()
 
             // 메인 콘텐츠
-            CameraView()
+            CameraView(camera: camera)
                 .opacity(selectedTab == .shot ? 1 : 0)
                 .allowsHitTesting(selectedTab == .shot)
 
@@ -50,8 +52,28 @@ struct MainView: View {
             }
         }
         .animation(.easeInOut(duration: 0.2), value: selectedTab)
+        .onAppear {
+            updateCameraSession()
+        }
+        .onChange(of: selectedTab) { _, _ in
+            updateCameraSession()
+        }
+        .onChange(of: showSearch) { _, _ in
+            updateCameraSession()
+        }
+        .onChange(of: scenePhase) { _, _ in
+            updateCameraSession()
+        }
         .sheet(isPresented: $showSearch) {
             SearchView()
+        }
+    }
+
+    private func updateCameraSession() {
+        if selectedTab == .shot && !showSearch && scenePhase == .active {
+            camera.start()
+        } else {
+            camera.stop()
         }
     }
 }

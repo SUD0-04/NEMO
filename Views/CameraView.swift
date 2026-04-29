@@ -11,7 +11,7 @@
 import SwiftUI
 
 struct CameraView: View {
-    @StateObject private var camera = CameraManager()
+    @ObservedObject var camera: CameraManager
     @State private var isFlashing = false // 셔터 효과용
 
     var body: some View {
@@ -67,5 +67,12 @@ struct CameraView: View {
         .onAppear {
             camera.setup()
         }
+        .onDisappear {
+            camera.stop()
+        }
     }
+}
+
+#Preview {
+    CameraView(camera: CameraManager())
 }

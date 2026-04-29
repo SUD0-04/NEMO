@@ -1,15 +1,30 @@
 import SwiftUI
 import AVFoundation
 import Photos
+import Combine
 
 struct PreView: View {
     @Binding var isActive: Bool
     @State private var page: Int = 0
+    @State private var welcomeTextIndex: Int = 0
     @State private var hasRequestedCameraPermission = false // Track if permission requested
     @State private var hasRequestedPhotoPermission = false // Track if photo permission requested
 
     let totalPages = 4
     private let indicatorBottomPadding: CGFloat = 90
+    private let welcomeTexts = [
+        "환영합니다.",
+        "Welcome",
+        "ようこそ",
+        "Bienvenue",
+        "Willkommen",
+        "Bienvenido",
+        "Benvenuto",
+        "Bem-vindo",
+        "欢迎",
+        "Добро пожаловать"
+    ]
+    private let welcomeTimer = Timer.publish(every: 3.5, on: .main, in: .common).autoconnect()
 
     var body: some View {
         ZStack {
@@ -18,22 +33,32 @@ struct PreView: View {
                 // First page replaced with custom content
                 VStack(spacing: 24) {
                     Spacer()
-                    Text("환영합니다.")
-                        .font(.largeTitle.bold())
+                    Text(welcomeTexts[welcomeTextIndex])
+                        .font(.system(size: 75, weight: .bold))
                         .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.35)
+                        .padding(.horizontal, 24)
+                        .contentTransition(.opacity)
+                        .animation(.easeInOut(duration: 0.65), value: welcomeTextIndex)
                     Text("정방형의 세계속으로")
                         .font(.title3.weight(.medium))
                         .foregroundColor(.white.opacity(0.8))
                     Spacer()
                 }
                 .tag(0)
+                .onReceive(welcomeTimer) { _ in
+                    guard page == 0 else { return }
+                    welcomeTextIndex = (welcomeTextIndex + 1) % welcomeTexts.count
+                }
                 // Other pages unchanged
                 ForEach(1..<totalPages, id: \.self) { index in
                     VStack(spacing: 24) {
                         Image(systemName: "photo.on.rectangle.angled")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 120)
+                            .frame(height: 150)
                             .foregroundColor(.white)
                         Text(previewTitle(for: index))
                             .font(.title.bold())
