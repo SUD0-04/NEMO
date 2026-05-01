@@ -54,20 +54,7 @@ struct PreView: View {
                 }
                 // Other pages unchanged
                 ForEach(1..<totalPages, id: \.self) { index in
-                    VStack(spacing: 24) {
-                        Image(systemName: "photo.on.rectangle.angled")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 150)
-                            .foregroundColor(.white)
-                        Text(previewTitle(for: index))
-                            .font(.title.bold())
-                            .foregroundColor(.white)
-                        Text(previewDescription(for: index))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white.opacity(0.7))
-                    }
-                    .padding(.horizontal, 30)
+                    previewPage(for: index)
                     .tag(index)
                 }
             }
@@ -116,6 +103,53 @@ struct PreView: View {
                 }
                 .padding(.bottom, 24)
             }
+        }
+    }
+
+    @ViewBuilder
+    private func previewPage(for index: Int) -> some View {
+        if index == 2 {
+            VStack(spacing: 24) {
+                Image("FilmsforPRE")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 300, alignment: .top)
+                    .scaleEffect(1.45)
+                    .padding(.top, 28)
+                    .padding(.horizontal, -48)
+                    .zIndex(0)
+
+                Spacer(minLength: 28)
+
+                previewText(for: index)
+                    .zIndex(1)
+
+                Spacer(minLength: 80)
+            }
+            .padding(.horizontal, 30)
+            .clipped()
+        } else {
+            VStack(spacing: 24) {
+                Image(systemName: "photo.on.rectangle.angled")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 150)
+                    .foregroundColor(.white)
+                previewText(for: index)
+            }
+            .padding(.horizontal, 30)
+        }
+    }
+
+    private func previewText(for index: Int) -> some View {
+        VStack(spacing: 24) {
+            Text(previewTitle(for: index))
+                .font(.title.bold())
+                .foregroundColor(.white)
+            Text(previewDescription(for: index))
+                .multilineTextAlignment(.center)
+                .foregroundColor(.white.opacity(0.7))
         }
     }
 

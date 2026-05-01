@@ -11,7 +11,7 @@ struct SearchView: View {
     var body: some View {
         NavigationStack {
             Text("사진검색")
-                .navigationTitle("🔍 Search")
+                .navigationTitle("🔍 나의 추억")
         }
     }
 }

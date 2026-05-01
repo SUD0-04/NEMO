@@ -66,8 +66,12 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
                       self.session.canAddInput(input),
                       self.session.canAddOutput(self.output) else { return }
 
+                if self.session.canSetSessionPreset(.photo) {
+                    self.session.sessionPreset = .photo
+                }
                 self.session.addInput(input)
                 self.session.addOutput(self.output)
+                self.output.maxPhotoQualityPrioritization = .quality
                 self.isSessionConfigured = true
             }
 
@@ -83,6 +87,7 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
         #else
         guard session.isRunning else { return }
         let settings = AVCapturePhotoSettings()
+        settings.photoQualityPrioritization = .quality
         output.capturePhoto(with: settings, delegate: self)
         #endif
     }
@@ -104,22 +109,41 @@ class CameraManager: NSObject, ObservableObject, AVCapturePhotoCaptureDelegate {
         }
     }
     
-    // return 문 뒤에 코드가 없도록 정리
     private func cropToSquare(image: UIImage) -> UIImage {
-        let originalWidth = image.size.width
-        let originalHeight = image.size.height
-        let edge = min(originalWidth, originalHeight)
-        
-        let xOffset = (originalWidth - edge) / 2
-        let yOffset = (originalHeight - edge) / 2
-        
-        let cropRect = CGRect(x: xOffset, y: yOffset, width: edge, height: edge)
-        
-        // cgImage 추출 후 크롭 진행
-        guard let cgImage = image.cgImage?.cropping(to: cropRect) else {
+        guard let normalizedImage = image.normalizedForPixelCropping(),
+              let sourceImage = normalizedImage.cgImage else {
             return image
         }
-        
-        return UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
+
+        let originalWidth = sourceImage.width
+        let originalHeight = sourceImage.height
+        let edge = min(originalWidth, originalHeight)
+
+        let cropRect = CGRect(
+            x: (originalWidth - edge) / 2,
+            y: (originalHeight - edge) / 2,
+            width: edge,
+            height: edge
+        )
+
+        guard let croppedImage = sourceImage.cropping(to: cropRect) else {
+            return normalizedImage
+        }
+
+        return UIImage(cgImage: croppedImage, scale: normalizedImage.scale, orientation: .up)
+    }
+}
+
+private extension UIImage {
+    func normalizedForPixelCropping() -> UIImage? {
+        guard imageOrientation != .up else { return self }
+
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = scale
+
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        return renderer.image { _ in
+            draw(in: CGRect(origin: .zero, size: size))
+        }
     }
 }
